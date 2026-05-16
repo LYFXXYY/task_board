@@ -1,0 +1,2 @@
+### 1. 查询所有用户（测试接口连通性）
+GET http://localhost:8080/user/list
