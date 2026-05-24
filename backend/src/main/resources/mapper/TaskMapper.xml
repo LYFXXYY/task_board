@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.taskboard.mapper.TaskMapper">
+
     <select id="selectAll" resultType="com.taskboard.entity.Task">
         SELECT * FROM lab_task
     </select>
+
+    <insert id="insert" parameterType="com.taskboard.entity.Task" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO lab_task (title, content, status, assignee_id, create_time)
+        VALUES (#{title}, #{content}, #{status}, #{assigneeId}, #{createTime})
+    </insert>
+
+    <update id="updateStatus">
+        UPDATE lab_task SET status = #{status} WHERE id = #{id}
+    </update>
+
 </mapper>
