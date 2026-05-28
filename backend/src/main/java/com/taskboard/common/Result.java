@@ -1,8 +1,8 @@
-package com.taskboard.common; // 注意修改成你自己的包名
+package com.taskboard.common;
 
 import lombok.Data;
 
-@Data // 如果没装 Lombok 插件，就手动写 Getter/Setter/ToString
+@Data
 public class Result<T> {
 
     private Integer code;   // 状态码
